@@ -1,6 +1,7 @@
 # branch-office-network-design
 Cisco Packet Tracer VLAN &amp; Inter-VLAN Routing Lab
 🖧 Branch Office Network Design (Cisco Packet Tracer Lab)
+
 📌 Project Overview
 
 This project demonstrates the design and implementation of a branch office network for a growing company. The network is built using Cisco devices in Packet Tracer and follows real-world networking practices such as VLAN segmentation, DHCP configuration, and inter-VLAN communication.
