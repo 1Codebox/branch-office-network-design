@@ -97,8 +97,11 @@ Allows laptops and smartphones to connect wirelessly
 **🧪 Testing & Verification**
 
 ✔ Devices successfully receive IP addresses via DHCP
+
 ✔ Devices within VLAN can communicate
+
 ✔ Inter-VLAN communication works (ping between departments)
+
 ✔ Wireless devices connect and communicate properly
 
 **🎯 Learning Outcomes**
