@@ -21,12 +21,15 @@ Separate departments using VLANs
 Provide wireless access for users
 Assign IP addresses automatically (DHCP)
 Allow communication between departments (Inter-VLAN Routing)
+
 🧩 Network Design
+
 🔹 VLAN Structure
 Department	VLAN ID	Subnet
 Admin / IT	VLAN 10	192.168.1.0 /26
 Finance / HR	VLAN 20	192.168.1.64 /26
 Customer Service	VLAN 30	192.168.1.128 /26
+
 🔹 Topology Overview
 1 Router (ISR4331) → Handles routing between VLANs
 1 Switch (Layer 2) → VLAN segmentation
@@ -36,7 +39,9 @@ PCs
 Laptops
 Smartphones
 Printers
+
 ⚙️ Key Features Implemented
+
 ✅ VLAN Configuration
 
 Each department is isolated using VLANs to improve security and reduce broadcast traffic.
@@ -57,6 +62,7 @@ Each department has its own wireless access point connected to the VLAN.
 
 All departments can communicate with each other as required.
 
+
 🛠️ Configuration Summary
 🔹 Switch Configuration
 
@@ -67,6 +73,7 @@ VLAN 20
 VLAN 30
 Assign ports to VLANs
 Configure trunk port to router
+
 🔹 Router Configuration
 
 Subinterfaces for each VLAN:
@@ -80,20 +87,18 @@ DHCP pools:
 ip dhcp pool VLAN10
 network 192.168.1.0 255.255.255.192
 default-router 192.168.1.1
+
 📡 Wireless Setup
 Each department uses an Access Point
 Connected to respective VLAN
 Allows laptops and smartphones to connect wirelessly
+
 🧪 Testing & Verification
 
 ✔ Devices successfully receive IP addresses via DHCP
 ✔ Devices within VLAN can communicate
 ✔ Inter-VLAN communication works (ping between departments)
 ✔ Wireless devices connect and communicate properly
-
-📸 Network Topology
-
-(Add your screenshot here — the one you uploaded)
 
 🎯 Learning Outcomes
 
@@ -108,6 +113,6 @@ Real-world enterprise network planning
 📂 Tools Used
 Cisco Packet Tracer
 Basic networking concepts (TCP/IP, VLANs, DHCP)
-🙌 Conclusion
 
+🙌 Conclusion
 This project simulates a real-world branch office network and demonstrates how multiple departments can securely and efficiently share network resources using VLANs and routing.
