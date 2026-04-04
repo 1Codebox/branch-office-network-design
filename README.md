@@ -78,19 +78,25 @@ Block size = 64
 **1st Subset** 
 
 Network ID: 192.168.1.0
+
 Broadcasr ID: 192.168.1.63
+
 Host Range: 192.168.1.1 - 192.168.1.62
 
 **2nd Subset**
 
 Network ID: 192.168.1.64
+
 Broadcasr ID: 192.168.1.127
+
 Host Range: 192.168.1.65 - 192.168.1.126
 
 **3rd Subset**
 
 Network ID: 192.168.1.128
+
 Broadcasr ID: 192.168.1.191
+
 Host Range: 192.168.1.129 - 192.168.1.190
 
 **🔹 Switch Configuration**
@@ -108,16 +114,23 @@ Configure trunk port to router
 Subinterfaces for each VLAN:
 
 interface g0/0/0.10
+
 encapsulation dot1Q 10
+
 ip address 192.168.1.1 255.255.255.192
 
 interface g0/0/0.20
+
 encapsulation dot1Q 20
+
 ip address 192.168.1.65 255.255.255.192
 
 interface g0/0/0.30
+
 encapsulation dot1Q 30
+
 ip address 192.168.1.129 255.255.255.192
+
 do write
 
 **DHCP pools:**
