@@ -30,6 +30,7 @@ Admin / IT	VLAN 10	192.168.1.0 /26
 Finance / HR	VLAN 20	192.168.1.64 /26
 Customer Service	VLAN 30	192.168.1.128 /26
 
+
 **🔹 Topology Overview**
 1 Router (ISR4331) → Handles routing between VLANs
 1 Switch (Layer 2) → VLAN segmentation
@@ -39,6 +40,7 @@ PCs
 Laptops
 Smartphones
 Printers
+
 
 **⚙️ Key Features Implemented**
 
@@ -66,14 +68,23 @@ All departments can communicate with each other as required.
 **🛠️ Configuration Summary**
 
 Base Network: 192.168.1.0
+
 No. of subnets = 3
+
 No. of subnets = 2^n
+
 2^n = 3 ==> n=2
+
 Class C = 255.255.255.0 ==> 11111111.11111111.11111111.00000000
+
 After borrowing 2 bits
+
 New Binary = 11111111.11111111.11111111.11000000
+
 New Subnet mask: 255.255.255.192
+
 Block size = 64
+
 
 **1st Subset** 
 
@@ -83,6 +94,7 @@ Broadcasr ID: 192.168.1.63
 
 Host Range: 192.168.1.1 - 192.168.1.62
 
+
 **2nd Subset**
 
 Network ID: 192.168.1.64
@@ -91,6 +103,7 @@ Broadcasr ID: 192.168.1.127
 
 Host Range: 192.168.1.65 - 192.168.1.126
 
+
 **3rd Subset**
 
 Network ID: 192.168.1.128
@@ -98,6 +111,7 @@ Network ID: 192.168.1.128
 Broadcasr ID: 192.168.1.191
 
 Host Range: 192.168.1.129 - 192.168.1.190
+
 
 **🔹 Switch Configuration**
 
@@ -108,6 +122,7 @@ VLAN 20
 VLAN 30
 Assign ports to VLANs
 Configure trunk port to router
+
 
 **🔹 Router Configuration**
 
