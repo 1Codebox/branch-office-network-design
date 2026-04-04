@@ -65,6 +65,34 @@ All departments can communicate with each other as required.
 
 **🛠️ Configuration Summary**
 
+Base Network: 192.168.1.0
+No. of subnets = 3
+No. of subnets = 2^n
+2^n = 3 ==> n=2
+Class C = 255.255.255.0 ==> 11111111.11111111.11111111.00000000
+After borrowing 2 bits
+New Binary = 11111111.11111111.11111111.11000000
+New Subnet mask: 255.255.255.192
+Block size = 64
+
+**1st Subset** 
+
+Network ID: 192.168.1.0
+Broadcasr ID: 192.168.1.63
+Host Range: 192.168.1.1 - 192.168.1.62
+
+**2nd Subset**
+
+Network ID: 192.168.1.64
+Broadcasr ID: 192.168.1.127
+Host Range: 192.168.1.65 - 192.168.1.126
+
+**3rd Subset**
+
+Network ID: 192.168.1.128
+Broadcasr ID: 192.168.1.191
+Host Range: 192.168.1.129 - 192.168.1.190
+
 **🔹 Switch Configuration**
 
 VLAN creation:
@@ -79,15 +107,43 @@ Configure trunk port to router
 
 Subinterfaces for each VLAN:
 
-interface g0/0.10
+interface g0/0/0.10
 encapsulation dot1Q 10
 ip address 192.168.1.1 255.255.255.192
 
+interface g0/0/0.20
+encapsulation dot1Q 20
+ip address 192.168.1.65 255.255.255.192
+
+interface g0/0/0.30
+encapsulation dot1Q 30
+ip address 192.168.1.129 255.255.255.192
+do write
+
 **DHCP pools:**
 
-ip dhcp pool VLAN10
+service dhcp
+ip dhcp pool VLAN10 (Admin-pool)
 network 192.168.1.0 255.255.255.192
 default-router 192.168.1.1
+dns-server 192.168.1.1
+domain-name Admin.com
+exit
+
+ip dhcp pool VLAN20 (Finance-pool)
+network 192.168.1.64 255.255.255.192
+default-router 192.168.1.65
+dns-server 192.168.1.65
+domain-name Finance.com
+exit
+
+ip dhcp pool VLAN30 (CS-pool)
+network 192.168.1.128 255.255.255.192
+default-router 192.168.1.129
+dns-server 192.168.1.129
+domain-name CS.com
+exit
+do wr
 
 **📡 Wireless Setup**
 Each department uses an Access Point
