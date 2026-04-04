@@ -151,27 +151,47 @@ do write
 **DHCP pools:**
 
 service dhcp
+
 ip dhcp pool VLAN10 (Admin-pool)
+
 network 192.168.1.0 255.255.255.192
+
 default-router 192.168.1.1
+
 dns-server 192.168.1.1
+
 domain-name Admin.com
+
 exit
+
 
 ip dhcp pool VLAN20 (Finance-pool)
+
 network 192.168.1.64 255.255.255.192
+
 default-router 192.168.1.65
+
 dns-server 192.168.1.65
+
 domain-name Finance.com
+
 exit
 
+
 ip dhcp pool VLAN30 (CS-pool)
+
 network 192.168.1.128 255.255.255.192
+
 default-router 192.168.1.129
+
 dns-server 192.168.1.129
+
 domain-name CS.com
+
 exit
+
 do wr
+
 
 **📡 Wireless Setup**
 Each department uses an Access Point
