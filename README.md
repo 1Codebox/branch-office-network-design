@@ -115,13 +115,38 @@ Host Range: 192.168.1.129 - 192.168.1.190
 
 **🔹 Switch Configuration**
 
-VLAN creation:
+**VLAN creation:**
 
-VLAN 10
-VLAN 20
-VLAN 30
-Assign ports to VLANs
-Configure trunk port to router
+int range fa0/2-4
+
+switchport mode access
+
+switchport access vlan 10
+
+
+int range fa0/5-7
+
+switchport mode access
+
+switchport access vlan 20
+
+
+int range fa0/8-10
+
+switchport mode access
+
+switchport access vlan 30
+
+do wr
+
+
+**Configure trunk port to router**
+
+int fa0/1
+
+switchport mode trunk
+
+do wr
 
 
 **🔹 Router Configuration**
